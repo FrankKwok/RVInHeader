@@ -63,7 +63,11 @@ public class MainActivity extends AppCompatActivity {
         });
         rvHeader.setAdapter(headerAdapter);
 
-        adapter.addHeaderView(headerView);
+        adapter.addHeaderView(headerView, 0);
+
+        View headerView1 = LayoutInflater.from(this)
+                .inflate(R.layout.header_view1, (ViewGroup) recyclerView.getParent(), false);
+        adapter.addHeaderView(headerView1, 1);
 
         adapter.addData(new ArrayList<String>() {
             {
